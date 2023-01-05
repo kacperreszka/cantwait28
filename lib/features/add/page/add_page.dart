@@ -25,6 +25,15 @@ class _AddPageState extends State<AddPage> {
           if (state.saved) {
             Navigator.of(context).pop();
           } //Zamykanie ekranu wpisywania po potwierdzeniu
+
+          if (state.errorMessage.isNotEmpty) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(state.errorMessage),
+                backgroundColor: Colors.red,
+              ),
+            );
+          } //Showsnackbar to wyskakujace okienko u dolu ekranu informujące nas o czyms w tym przypadku o błedzie
         },
         child: BlocBuilder<AddCubit, AddState>(
           builder: (context, state) {

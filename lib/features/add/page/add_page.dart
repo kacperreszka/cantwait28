@@ -24,7 +24,7 @@ class _AddPageState extends State<AddPage> {
         listener: (context, state) {
           if (state.saved) {
             Navigator.of(context).pop();
-          }
+          } //Zamykanie ekranu wpisywania po potwierdzeniu
         },
         child: BlocBuilder<AddCubit, AddState>(
           builder: (context, state) {
